@@ -18,7 +18,7 @@
       </ul>
     </nav>
     <div class="box">
-      <h2>Blank 0.1 <small>(Stinky Bomb)</small></h2>
+      <h2>Blank 0.1 <small>(Dirty Bomb)</small></h2>
       <p>Blank es un sistema de diseño y desarrollo front-end modular. Está diseñado para agilizar los procesos de wireframing, diseño y maquetación en el area de experiencia de America Móvil.</p>
     </div>
     <div class="box">
@@ -27,7 +27,7 @@
           <h3>Grids (_grid.sass)</h3>
         </dt>
         <dd>La retícula es la base estructural del framework. Las clases están construidas y declaradas en la hoja de estilos parciales <kbd>_grid.sass</kbd> Las clases tienen un valor inicial de 100% width y responden a un solo breakpoint (escalable) donde se dividen entre 12 columnas (12/100%). Su uso dentro del contenedor row deberá sumar 12 unidades ej. <kbd>12</kbd>, <kbd>6/6</kbd>, <kbd>4/4/4</kbd>, <kbd>3/3/3/3</kbd> etc.</dd>
-        <dt>Ejemplo</dt>
+        <dt>Markup</dt>
         <dd>
           <pre class="pre">&lt;div class=".row"&gt;
   &lt;div class=".grid-1"&gt;Content&lt;/div&gt;
@@ -93,7 +93,7 @@
           <h3>Tipografía (_type.sass)</h3>
         </dt>
         <dd>La hoja de estilos parcial <kbd>_type.sass</kbd> contiene estilos base para los elementos de texto más comunes; Titulares, parrafos y cuerpo basados en los radios de una escala músical y un ritmo vertical relacionado a la misma escala. El cuerpo base de la tipografía ha sido establecido con un valor inicial de 19px. Usamos <a href="http://www.gridlover.net/">Gridlover</a> para generar la escala y el ritmo.</dd>
-        <dt>Ejemplo</dt>
+        <dt>Markup</dt>
         <dd>
           <pre class="pre">&lt;h1&gt;Heading&lt;small&gt;Subtext&lt;/small&gt;&lt;/h1&gt;
 &lt;span class="h1"&gt;Text&lt;/span&gt;</pre>
@@ -104,8 +104,7 @@
       <h3>Titular nivel 3 <small>Subtext</small></h3>
       <h4>Titular nivel 4 <small>Subtext</small></h4>
       <ul class="unordered-list">
-        <li><kbd>.h(n)</kbd> Clases modulares para su uso con @extend</li>
-        <li><kbd>.Grid-(1-12)</kbd> Estilos de tamaño para cada columna.</li>
+        <li><kbd>h(n)</kbd> Clases modulares para su uso con @extend</li>
       </ul>
     </div>
     <div class="box">
@@ -114,16 +113,10 @@
           <h3>Forms (_forms.sass)</h3>
         </dt>
         <dd>La hoja de estilos parcial <kbd>_forms.sass</kbd> contiene estilos base para formularios con diferentes modificadores dependiento de las necesidades de comportamiento de los formularios. El valor inicial de los formularios es display: block y 100% width (mobile first) además de <kbd>.form--inline</kbd> para los formularios en linea y <kbd>.form--stack</kbd> para formularios agrupados en bloques.</dd>
-        <dt>Ejemplo</dt>
+        <dt>Markup</dt>
         <dd>
-          <pre>&lt;form class=".form"&gt;
+          <pre>&lt;form class=".form .form--inline .form--stack"&gt;
   Default form
-&lt;/form&gt;
-&lt;form class=".form.form--inline"&gt;
-  Inline form
-&lt;/form&gt;
-&lt;form class=".form.form--stack"&gt;
-  Grouped form
 &lt;/form&gt;</pre>
         </dd>
       </dl>
@@ -146,88 +139,59 @@
           </div>
         </fieldset>
       </form>
+      <ul class="unordered-list">
+        <li><kbd>.form</kbd> Clase para formularios convencionales (100% width/ Display: block)</li>
+      </ul>
       <form class="form form--inline">
         <fieldset>
           <legend>Inline Form</legend>
-          <div class="grid-3">
-            <input type="email" placeholder="Email">
-          </div>
-          <div class="grid-3">
-            <input type="password" placeholder="Password">
-          </div>
-          <div class="grid-3">
-            <label for="remember">
-              <input id="remember" type="checkbox">Remember me
-            </label>
-          </div>
-          <div class="grid-3">
-            <button type="submit" class="button button--secondary">Sign in</button>
-          </div>
+          <input type="email" placeholder="Email">
+          <input type="password" placeholder="Password">
+          <label for="remember">
+            <input id="remember" type="checkbox">Remember me
+          </label>
+          <button type="submit" class="button button--secondary">Sign in</button>
         </fieldset>
       </form>
+      <ul class="unordered-list">
+        <li><kbd>.form--inline</kbd> Clase para formularios en línea</li>
+      </ul>
     </div>
     <div class="box">
       <dl class="definition">
-        <dt class="definition__title">Buttons (Default)</dt>
-        <dd class="definition__body">Buttons are also mobile first by default, they start at 100% width & display: block</dd>
+        <dt> 
+          <h3>Buttons (_buttons.sass)</h3>
+        </dt>
+        <dd>Los botones están construidas con clases separadas a los formularios y se puede usar en <kbd>inputs</kbd>, <kbd>anchors</kbd> y <kbd>buttons</kbd>. Todos los botones tienen un valor inicial de 100% width y display block a excepción del modificador de botones de tipo --inline. Se pueden añadir modificadores extras de apariencia utilizando la sintaxis BEM para modificar bloques: <kbd>--modificador</kbd>.</dd>
+        <dt>Markup</dt>
+        <dd>
+          <pre class="pre">&lt;button class=".button"&gt;Button&lt;/button&gt;
+&lt;input type="submit" class=".button"&gt;
+&lt;a href="#" class=".button"&gt;Link&lt;/a&gt;</pre>
+        </dd>
       </dl>
       <div class="row">
         <form class="form">
-          <div class="grid-12"><a href="#" class="button">Anchor Button</a></div>
+          <div class="grid-12"><a href="#" class="button">Default</a></div>
           <div class="grid-12">
-            <button class="button">Button Button</button>
-          </div>
-          <div class="grid-12"><a href="#" class="button button--primary">Anchor Button (Primary)</a></div>
-          <div class="grid-12">
-            <button class="button button--primary">Button Button (Primary)</button>
-          </div>
-          <div class="grid-12"><a href="#" class="button button--secondary">Anchor Button (Secondary)</a></div>
-          <div class="grid-12">
-            <button class="button button--secondary">Button Button (Secondary)</button>
+            <button class="button button--secondary">Secondary</button>
           </div>
         </form>
+        <ul class="unordered-list">
+          <li><kbd>.button</kbd> Clase para construir botones</li>
+          <li><kbd>.button--secondary</kbd> Clase para construir botones con estilos secundarios</li>
+        </ul>
       </div>
-    </div>
-    <div class="box">
-      <dl class="definition">
-        <dt class="definition__title">Buttons (--inline)</dt>
-        <dd class="definition__body">Default buttons inside a .form--inline modifier.</dd>
-      </dl>
       <div class="row">
         <form class="form form--inline">
-          <div class="grid-12"><a href="#" class="button">Anchor Button</a></div>
+          <div class="grid-12"><a href="#" class="button">Inline</a></div>
           <div class="grid-12">
-            <button class="button">Button Button</button>
-          </div>
-          <div class="grid-12"><a href="#" class="button button--primary">Anchor Button (Primary)</a></div>
-          <div class="grid-12">
-            <button class="button button--primary">Button Button (Primary)</button>
-          </div>
-          <div class="grid-12"><a href="#" class="button button--secondary">Anchor Button (Secondary)</a></div>
-          <div class="grid-12">
-            <button class="button button--secondary">Button Button (Secondary)</button>
+            <button class="button button--secondary">Inline Secondary</button>
           </div>
         </form>
-      </div>
-    </div>
-    <div class="box">
-      <dl class="definition">
-        <dt class="definition__title">Grid & Buttons</dt>
-        <dd class="definition__body">Use the grid to distribute form & inputs.</dd>
-      </dl>
-      <div class="row">
-        <form class="form">
-          <div class="grid-12"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-6"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-6"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-4"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-4"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-4"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-3"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-3"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-3"><a href="#" class="button button--secondary">Button</a></div>
-          <div class="grid-3"><a href="#" class="button button--secondary">Button</a></div>
-        </form>
+        <ul class="unordered-list">
+          <li><kbd>.button--inline</kbd> Clase para construir botones en línea</li>
+        </ul>
       </div>
     </div>
   </body>

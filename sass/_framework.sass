@@ -49,14 +49,15 @@
 .form--inline .button,
 .form--inline textarea
 	display: inline-block
-	//width: auto
+	width: auto
+	margin-right: $spacing-sm
 
 // Buttons
 .button
 	background-color: $ui-button-color-1
 	border: 1px solid $ui-button-color-1
 	margin: $spacing-sm 0px
-	padding: $spacing-sm
+	padding: $spacing-sm/2
 	text-decoration: none
 	color: inherit
 	@extend .border-radius
@@ -67,6 +68,8 @@
 	&:hover
 		background-color: darken($ui-button-color-1, 7)
 		border: 1px solid darken($ui-button-color-1, 7)	
+
+.button--inline
 
 .button--primary
 	background-color: $ui-button-color-2
@@ -93,7 +96,7 @@
 	dt
 		@extend h3
 	dd
-		padding-bottom: $spacing-sm
+		padding-bottom: $spacing-md
 
 // Navigation Elements
 

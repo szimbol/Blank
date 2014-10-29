@@ -373,13 +373,15 @@ h5 small {
 .form--inline .button,
 .form--inline textarea {
   display: inline-block;
+  width: auto;
+  margin-right: 17px;
 }
 
 .button {
   background-color: #ecf0f1;
   border: 1px solid #ecf0f1;
   margin: 17px 0px;
-  padding: 17px;
+  padding: 8.5px;
   text-decoration: none;
   color: inherit;
   border-bottom: 1px solid #d7e0e2;
@@ -417,7 +419,7 @@ h5 small {
 }
 
 .definition dd {
-  padding-bottom: 17px;
+  padding-bottom: 34px;
 }
 
 .nav {
