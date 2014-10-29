@@ -1,0 +1,212 @@
+doctype
+html
+	head
+		meta(charset='utf-8')
+		meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no")
+		title The Blank Framework
+		link(rel="stylesheet", href="css/normalize.css", type="text/css")
+		link(rel="stylesheet", href="css/style.css", type="text/css")
+	body
+		nav.nav
+			ul.navigation__list
+				li
+					a(href="#") Blank
+				li
+					a(href="#") Overview
+				li
+					a(href="") Grid
+				li
+					a(href="") Type
+				li
+					a(href="") Utilities
+		.box
+			h2 Blank 0.1 
+				small (Stinky Bomb)
+			p
+				| Blank es un sistema de diseño y desarrollo front-end modular. Está diseñado para agilizar los procesos de wireframing, diseño y maquetación en el area de experiencia de America Móvil.
+		.box
+			dl.definition
+				dt 
+					h3 Grids (_grid.sass)
+				dd
+					| La retícula es la base estructural del framework. Las clases están construidas y declaradas en la hoja de estilos parciales <kbd>_grid.sass</kbd> Las clases tienen un valor inicial de 100% width y responden a un solo breakpoint (escalable) donde se dividen entre 12 columnas (12/100%). Su uso dentro del contenedor row deberá sumar 12 unidades ej. <kbd>12</kbd>, <kbd>6/6</kbd>, <kbd>4/4/4</kbd>, <kbd>3/3/3/3</kbd> etc.
+				dt Ejemplo
+				dd
+					pre.pre
+						| &lt;div class=".row"&gt;
+						|   &lt;div class=".grid-1"&gt;Content&lt;/div&gt;
+						|   &lt;div class=".grid-11"&gt;Content&lt;/div&gt;
+						| &lt;/div&gt;
+			.row
+				.grid-1.grid--style 1
+				.grid-11.grid--style.grid--highlight 11
+			.row
+				.grid-2.grid--style 2
+				.grid-10.grid--style.grid--highlight 10
+			.row
+				.grid-3.grid--style 3
+				.grid-9.grid--style.grid--highlight 9
+			.row
+				.grid-4.grid--style 4
+				.grid-8.grid--style.grid--highlight 8
+			.row
+				.grid-5.grid--style 5
+				.grid-7.grid--style.grid--highlight 7
+			.row
+				.grid-6.grid--style 6
+				.grid-6.grid--style.grid--highlight 6
+			.row
+				.grid-7.grid--style 7
+				.grid-5.grid--style.grid--highlight 5
+			.row
+				.grid-8.grid--style 8
+				.grid-4.grid--style.grid--highlight 4
+			.row
+				.grid-9.grid--style 9
+				.grid-3.grid--style.grid--highlight 3
+			.row
+				.grid-10.grid--style 10
+				.grid-2.grid--style.grid--highlight 2
+			.row
+				.grid-11.grid--style 11
+				.grid-1.grid--style.grid--highlight 1
+			.row
+				.grid-12.grid--style 12
+			ul.unordered-list
+				li
+					| <kbd>.row</kbd> Contenedor horizontal
+				li
+					| <kbd>.grid-(n)</kbd> Estilos de tamaño para cada columna, 1-12 (ajustable en _type.sass)
+		.box
+			dl.definition
+				dt
+					h3 Tipografía (_type.sass)
+				dd
+					| La hoja de estilos parcial <kbd>_type.sass</kbd> contiene estilos base para los elementos de texto más comunes; Titulares, parrafos y cuerpo basados en los radios de una escala músical y un ritmo vertical relacionado a la misma escala. El cuerpo base de la tipografía ha sido establecido con un valor inicial de 19px. Usamos <a href="http://www.gridlover.net/">Gridlover</a> para generar la escala y el ritmo.
+				dt Ejemplo
+				dd
+					pre.pre
+						| &lt;h1&gt;Heading&lt;small&gt;Subtext&lt;/small&gt;&lt;/h1&gt;
+						| &lt;span class="h1"&gt;Text&lt;/span&gt;
+
+			h1 Titular nivel 1 
+				small Subtext
+			h2 Titular nivel 2 
+				small Subtext
+			h3 Titular nivel 3 
+				small Subtext
+			h4 Titular nivel 4 
+				small Subtext
+			ul.unordered-list
+				li
+					| <kbd>.h(n)</kbd> Clases modulares para su uso con @extend
+				li
+					| <kbd>.Grid-(1-12)</kbd> Estilos de tamaño para cada columna.
+		.box
+			dl.definition
+				dt
+					h3 Forms (_forms.sass)
+				dd
+					| La hoja de estilos parcial <kbd>_forms.sass</kbd> contiene estilos base para formularios con diferentes modificadores dependiento de las necesidades de comportamiento de los formularios. El valor inicial de los formularios es display: block y 100% width (mobile first) además de <kbd>.form--inline</kbd> para los formularios en linea y <kbd>.form--stack</kbd> para formularios agrupados en bloques.
+				dt Ejemplo
+				dd
+					pre
+						| &lt;form class=".form"&gt;
+						|   Default form
+						| &lt;/form&gt;
+						| &lt;form class=".form.form--inline"&gt;
+						|   Inline form
+						| &lt;/form&gt;
+						| &lt;form class=".form.form--stack"&gt;
+						|   Grouped form
+						| &lt;/form&gt;
+			form.form
+				fieldset
+					Legend Default Form
+					.row
+						input(type="email", placeholder="Email")
+					.row
+						input(type="password", placeholder="Password")
+					.row
+						label
+							input(id="remember", type="checkbox")
+							| Remember me
+					.row
+						button(type="submit", class="button button--primary") Sign in
+			form.form.form--inline
+				fieldset
+					legend Inline Form
+					.grid-3
+						input(type="email", placeholder="Email")
+					.grid-3
+						input(type="password", placeholder="Password")
+					.grid-3
+						label(for="remember")
+							input(id="remember", type="checkbox")
+							| Remember me
+					.grid-3
+						button(type="submit", class="button button--secondary") Sign in
+		.box
+			dl.definition
+				dt.definition__title Buttons (Default)
+				dd.definition__body Buttons are also mobile first by default, they start at 100% width & display: block
+			.row
+				form.form
+					.grid-12
+						a(href="#").button Anchor Button
+					.grid-12
+						button.button Button Button
+					.grid-12
+						a(href="#").button.button--primary Anchor Button (Primary)
+					.grid-12
+						button.button.button--primary Button Button (Primary)
+					.grid-12
+						a(href="#").button.button--secondary Anchor Button (Secondary)
+					.grid-12
+						button.button.button--secondary Button Button (Secondary)
+		.box
+			dl.definition
+				dt.definition__title Buttons (--inline)
+				dd.definition__body Default buttons inside a .form--inline modifier.
+			.row
+				form.form.form--inline
+					.grid-12
+						a.button(href="#") Anchor Button
+					.grid-12
+						button.button Button Button
+					.grid-12
+						a.button.button--primary(href="#") Anchor Button (Primary)
+					.grid-12
+						button.button.button--primary Button Button (Primary)
+					.grid-12
+						a.button.button--secondary(href="#") Anchor Button (Secondary)
+					.grid-12
+						button.button.button--secondary Button Button (Secondary)
+
+		.box
+			dl.definition
+				dt.definition__title Grid & Buttons
+				dd.definition__body Use the grid to distribute form & inputs.
+			.row
+				form.form
+					.grid-12
+						a(href="#").button.button--secondary Button
+					.grid-6
+						a(href="#").button.button--secondary Button
+					.grid-6
+						a(href="#").button.button--secondary Button
+					.grid-4
+						a(href="#").button.button--secondary Button
+					.grid-4
+						a(href="#").button.button--secondary Button
+					.grid-4
+						a(href="#").button.button--secondary Button
+					.grid-3
+						a(href="#").button.button--secondary Button
+					.grid-3
+						a(href="#").button.button--secondary Button
+					.grid-3
+						a(href="#").button.button--secondary Button
+					.grid-3
+						a(href="#").button.button--secondary Button
+

@@ -1,0 +1,37 @@
+// Grid Settings
+$grid-columns: 12
+
+// Row Utility
+.row
+	clear: both
+	overflow: hidden
+
+// Grid Placeholders
+%grid--column
+	float: left
+	margin: 0px
+	box-sizing: border-box
+
+// Grid Classes
+@for $i from 1 through $grid-columns
+	.grid-#{$i}
+		width: percentage($grid-columns/$grid-columns)
+		transition: all 0.1s linear
+		@extend %grid--column
+		@media (min-width: $breakpoint-md)
+			width: percentage($i/$grid-columns)
+			transition: all 0.1s linear
+			padding: 0px $spacing-md 0px 0px
+
+
+// Grid Styling
+.grid--style
+	padding: $spacing-sm
+	border-bottom: 1px solid #f0f0f0
+
+.grid--highlight
+	background-color: #f9f9f9
+	display: none
+	//padding: $spacing-md
+	@media (min-width: $breakpoint-md)
+		display: block

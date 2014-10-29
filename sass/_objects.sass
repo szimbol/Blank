@@ -1,0 +1,11 @@
+// Box object
+.box
+	padding-bottom: $spacing-md
+	margin-bottom: $spacing-md
+	border-bottom: 1px solid $ui-border-color
+	&:after
+		content: " " /* Older browser do not support empty content */
+		visibility: hidden
+		display: block
+		height: 0
+		clear: both

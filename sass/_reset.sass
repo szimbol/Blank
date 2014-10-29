@@ -1,0 +1,55 @@
+// Individual Reset Skin for Normalize.css
+
+p
+	margin: 0px
+	padding: 0px
+
+// Definition Lists
+dl
+
+dt
+	margin: 0px
+dd
+	margin: 0px
+
+ul
+	list-style-type: none
+	padding-left: 0px
+
+// Format
+
+pre
+	background-color: lighten(#000, 97)
+	font-size: 16px
+	border: 1px solid $ui-border-color
+	padding: $spacing-md
+	@extend .border-radius
+
+kbd
+	padding: 3px
+	background-color: lighten(#000, 50)
+	color: #fff
+	@extend .border-radius
+
+// Forms
+fieldset
+	margin: 0
+	padding: $padding-sm 0px
+	border: 0
+legend
+	display: block
+	width: 100%
+	padding: $padding-sm 0px
+	border-bottom: 1px solid $ui-border-color
+	@extend h3
+input, input[type="email"], input[type="password"]
+	border: 1px solid $ui-border-color-strong
+	padding: $padding-sm
+	//-webkit-appearance: none
+	@extend .border-radius
+input[type="submit"], input[type="reset"], button
+	background-color: $ui-border-color-strong
+	border: 1px solid $ui-border-color-strong
+	padding: $padding-sm
+	cursor: pointer
+	@extend .border-radius
